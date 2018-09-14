@@ -1,6 +1,12 @@
 import React from 'react';
 
-function Table(){
+export default (props) => {
+
+    const tableRows = props.data.map((item, index) => {
+        console.log(item);
+        return;
+    });
+
     return (
     <table className="table">
         <thead className="thead-inverse">
@@ -30,5 +36,3 @@ function Table(){
     </table>
     )
 }
-
-export default Table;
