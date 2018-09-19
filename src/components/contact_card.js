@@ -2,7 +2,7 @@ import React from 'react';
 
 export default props => {
     const {firstName, lastName, phone, email} = props.contact;
-    return <div className="col-6 my-3">
+    return <div className="col-12 my-3">
         <div className="card">
             <div className="card-header">
                 {lastName}
