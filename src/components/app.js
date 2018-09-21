@@ -11,13 +11,25 @@ class App extends Component {
             contacts: ContactData,
         }
     }
+
+    addContact = (contact) => {
+        console.log('App: addComponent: ', contact);
+        const newContacts = this.state.contacts.slice();
+        
+        newContacts.push(contact);
+        
+        this.setState({
+            contacts: newContacts
+        })
+    }
+
     render(){
         return (
             <div className="container">
                 <h1 className="text-center my-3">Address Book</h1>
                 <div className="row">
                     <div className="col-4">
-                    <ContactForm />
+                    <ContactForm add={this.addContact} />
                     </div>
                     <ContactList contacts={this.state.contacts}/>
                 </div>
