@@ -1,20 +1,21 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
+import './nav.css';
 
 export default props => (
     <div>
         <ul className="nav nav-tabs mt-3">
             <li className="nav-item">
-                <Link to="/" className="nav-link">Welcome</Link>
+                <NavLink exact to="/" className="nav-link" activeClassName="active selected">Welcome</NavLink>
             </li>
             <li className="nav-item">
-                <Link to="/our_macarons" className="nav-link">Our Macarons</Link>
+                <NavLink to="/our_macarons" className="nav-link" activeClassName="active selected">Our Macarons</NavLink>
             </li>
             <li className="nav-item">
-                <Link to="/gifts_parties" className="nav-link">Gifts & Parties</Link>
+                <NavLink to="/gifts_parties" className="nav-link" activeClassName="active selected">Gifts & Parties</NavLink>
             </li>
             <li className="nav-item">
-                <Link to="/contact" className="nav-link">Contact Us</Link>
+                <NavLink to="/contact" className="nav-link" activeClassName="active selected">Contact Us</NavLink>
             </li>
         </ul>
     </div>
