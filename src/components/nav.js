@@ -10,6 +10,12 @@ export default props => (
             <li className="nav-item">
                 <Link to="/our_macarons" className="nav-link">Our Macarons</Link>
             </li>
+            <li className="nav-item">
+                <Link to="/gifts_parties" className="nav-link">Gifts & Parties</Link>
+            </li>
+            <li className="nav-item">
+                <Link to="/contact" className="nav-link">Contact Us</Link>
+            </li>
         </ul>
     </div>
 )
