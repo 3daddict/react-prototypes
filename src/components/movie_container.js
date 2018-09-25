@@ -5,10 +5,10 @@ import Movie from './movie';
 class MoviesContainer extends Component {
     constructor(props){
         super(props);
-
-        this.State = {
+    
+        this.state = {
             movies: []
-        }
+        };
     }
 
     componentWillMount(){
@@ -25,12 +25,13 @@ class MoviesContainer extends Component {
     }
 
     render(){
-        console.log('The State is:', this.state);
+        const movieList = this.state.movies.map((movieInfo, index) => {
+            return <Movie info={movieInfo} key={index}/>;
+        });
 
         return (
             <div>
-                <h2>Movie Container</h2>
-                <Movie />
+                {movieList}
             </div>
         )
     }
