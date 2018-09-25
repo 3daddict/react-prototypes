@@ -1,13 +1,39 @@
-import {Component} from 'react';
-import Movie from './movie'
+import React, { Component } from 'react';
+import Axios from 'axios';
+import Movie from './movie';
 
 class MoviesContainer extends Component {
-    render() {
-        <div className="container">
-            <h2>Movie Container</h2>
-            <h2><Movie /></h2>
-        </div>
+    constructor(props){
+        super(props);
+
+        this.State = {
+            movies: []
+        }
+    }
+
+    componentWillMount(){
+        const url = 'http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topMovies/json'
+
+        Axios.get(url).then((response) => {
+            console.log('Response:', response);
+        
+            this.setState({
+                movies: response.data.feed.entry
+            });
+        });
+
+    }
+
+    render(){
+        console.log('The State is:', this.state);
+
+        return (
+            <div>
+                <h2>Movie Container</h2>
+                <Movie />
+            </div>
+        )
     }
 }
 
-//feature set 1 last set of instructions
+export default MoviesContainer;
